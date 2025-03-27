@@ -10,7 +10,9 @@
     "lint": "eslint src/ --max-warnings 0"
   },
   "dependencies": {
+    "@remix-run/react": "1.19.3",
     "@repo/ui": "*",
+    "@vercel/remix": "1.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -22,6 +24,6 @@
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.22.0",
     "typescript": "5.8.2",
-    "vite": "^5.4.14"
+    "vite": "6.2.3"
   }
 }
