@@ -9,7 +9,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "check-types": "turbo run check-types",
-    "gen-graph": "turbo build --graph=docs/graph.png"
+    "gen-graph": "turbo build --graph=docs/assets/graph.png"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
