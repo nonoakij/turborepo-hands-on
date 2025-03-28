@@ -124,12 +124,20 @@ layout: cover
 
 ## 🧠 Turborepoのキャッシュ戦略
 
+<div class="mt-8">
+
 - 実行ログ・ファイル出力・依存関係を元にキャッシュ
 - 同じ入力 → 同じ出力 → 再実行スキップ
 - `node_modules/.cache/turbo` にローカルキャッシュ
 - Remote Cacheも利用可能（Vercel or 自前）
 
+</div>
+
+---
+
 ## 🛠 Hands-Onでやること
+
+<div class="mt-8">
 
 - 既存の npm プロジェクトのつらみを体験する
 - 既存の npm workspace プロジェクトに TurboRepo を導入する
@@ -137,6 +145,8 @@ layout: cover
 - `turbo.json` 作成
 - 実行して違いを見る
 - Remote Cacheを試す
+
+</div>
 
 ---
 
@@ -170,26 +180,29 @@ npm run dev
 
 ### Deps graph
 
+<div class="mt-8">
+
 ```bash
 npm run gen-graph
 ```
-
+</div>
 ---
 
 ### 実行の依存を確認する
+<div class="mt-8">
 
 ```sh
 npm run lint -- --dry --filter='admin'
 ```
+</div>
 ---
 
 ## 🙌 まとめ
-
-- TurboRepoはモノレポにおけるCI/CDの最適化ツール
-- タスクキャッシュ・依存順制御が魅力
-- 小さく始めて大きく育てられる設計
-- 楽に速く、Monorepoを楽しもう！
-
+<div class="mt-8">
+- Turborepo はモノレポのビルドを最適化するツール
+- モジュールの管理は npm workspace で行う
+  - yarn, pnpm, bun(Beta) でもよい
+</div>
 ---
 layout: center
 ---
