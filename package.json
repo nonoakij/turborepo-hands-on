@@ -22,7 +22,6 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "docs/*",
     "docs"
   ],
   "volta": {
