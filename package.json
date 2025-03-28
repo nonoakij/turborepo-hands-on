@@ -2,18 +2,22 @@
   "name": "turborepo-hands-on",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "check-types": "turbo run check-types",
-    "gen-graph": "turbo build --graph=docs/graph.png"
+    "build": "npm run build:packages && npm run build:apps",
+    "build:packages": "npm run build -w packages/logger -w packages/ui",
+    "build:apps": "npm run build -w apps/api -w apps/admin -w apps/blog -w apps/storefront",
+    "dev": "npm run dev --workspaces --if-present --parallel",
+    "lint": "npm run lint:packages && npm run lint:apps",
+    "lint:packages": "npm run lint -w packages/logger -w packages/ui",
+    "lint:apps": "npm run lint -w apps/admin -w apps/blog -w apps/api -w apps/storefront",
+    "test": "npm run test:packages && npm run test:apps",
+    "test:packages": "npm run test -w packages/logger -w packages/ui",
+    "test:apps": "npm run test -w apps/api",
+    "check-types": "npm run check-types:packages && npm run check-types:apps",
+    "check-types:packages": "npm run check-types -w packages/logger -w packages/ui",
+    "check-types:apps": "npm run check-types -w apps/admin -w apps/blog -w apps/api -w apps/storefront"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "turbo": "^2.4.4"
+    "prettier": "^3.5.3"
   },
   "engines": {
     "node": ">=18"
@@ -22,7 +26,6 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "docs/*",
     "docs"
   ],
   "volta": {
