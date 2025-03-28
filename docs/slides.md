@@ -178,13 +178,99 @@ npm run dev
 
 ---
 
-### Deps graph
+## ビルドしてみる
+<div class="mt-8">
+
+```bash
+npm run build
+```
+</div>
+
+---
+
+## turbo をインストールする
+<div class="my-8">
+
+```bash
+npm install turbo --save-dev
+```
+
+</div>
+
+## turbo.jsonを作成する
+
+<div class="mt-8">
+
+```bash
+touch turbo.json
+```
+
+中身は[これ](https://raw.githubusercontent.com/nonoakij/turborepo-hands-on/refs/heads/main/turbo.json)を使ってください
+
+<https://raw.githubusercontent.com/nonoakij/turborepo-hands-on/refs/heads/main/turbo.json>
+
+</div>
+
+---
+
+## scriptsを変更する
+<div class="mt-8">
+
+```json
+...
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "check-types": "turbo run check-types",
+    "gen-graph": "turbo build --graph=docs/graph.png"
+  },
+...
+```
+
+<https://github.com/nonoakij/turborepo-hands-on/blob/main/package.json>
+
+</div>
+
+---
+
+## turbo で dev と build を実行する
+<div class="mt-8">
+
+```bash
+npm run dev
+```
+</div>
+
+<div class="mt-8">
+
+```bash
+npm run build
+```
+</div>
+
+---
+
+### Deps graph を生成する
 
 <div class="mt-8">
 
 ```bash
 npm run gen-graph
 ```
+
+</div>
+<div class="mt-8">
+
+> [!WARNING]
+> graphviz が必要です。
+> ```bash
+> brew install graphviz
+> ```
+
 </div>
 ---
 
@@ -195,10 +281,22 @@ npm run gen-graph
 npm run lint -- --dry --filter='admin'
 ```
 </div>
+
+---
+
+### Remote Cacheを試す
+<div class="mt-8">
+
+```sh
+npx turbo login
+turbo link
+```
+</div>
 ---
 
 ## 🙌 まとめ
 <div class="mt-8">
+
 - Turborepo はモノレポのビルドを最適化するツール
 - モジュールの管理は npm workspace で行う
   - yarn, pnpm, bun(Beta) でもよい
