@@ -2,7 +2,7 @@
 
 ## Deps graph
 
-![Deps graph](/docs/graph.png)
+![Deps graph](/docs/assets/graph.png)
 
 ```sh
 $ npm run gen-graph
